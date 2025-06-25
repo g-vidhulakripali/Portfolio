@@ -1,37 +1,85 @@
 
-import { Github, Linkedin, Mail, Phone } from "lucide-react";
+import { Github, Linkedin, Mail, Menu } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export const Header = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <header className="bg-gradient-to-r from-slate-800/80 to-slate-900/80 backdrop-blur-sm border-b border-gray-700/50">
-      <div className="container mx-auto px-4 py-6">
-        <div className="flex flex-col md:flex-row items-center justify-between">
-          <div className="text-center md:text-left mb-4 md:mb-0">
-            <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              VIDHULA KRIPALI GANESH BABU
-            </h1>
-            <p className="text-xl text-gray-300 mt-2">Full Stack Developer</p>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-gray-700/50">
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex items-center justify-between">
+          <div className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            VK
           </div>
           
-          <div className="flex space-x-4">
-            <a
-              href="mailto:gvidhulak@gmail.com"
-              className="p-2 bg-blue-600/20 hover:bg-blue-600/30 rounded-full transition-colors"
+          <nav className="hidden md:flex space-x-8">
+            {[
+              { label: "About", id: "about" },
+              { label: "Skills", id: "skills" },
+              { label: "Projects", id: "projects" },
+              { label: "Experience", id: "experience" },
+              { label: "Contact", id: "contact" }
+            ].map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="text-gray-300 hover:text-white transition-colors hover:underline underline-offset-4"
+              >
+                {item.label}
+              </button>
+            ))}
+          </nav>
+          
+          <div className="flex items-center space-x-4">
+            <div className="hidden sm:flex space-x-2">
+              <a
+                href="mailto:gvidhulak@gmail.com"
+                className="p-2 bg-blue-600/20 hover:bg-blue-600/30 rounded-full transition-colors"
+              >
+                <Mail className="w-4 h-4 text-blue-400" />
+              </a>
+              <a
+                href="https://linkedin.com/in/g-vidhula-kripali"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 bg-blue-600/20 hover:bg-blue-600/30 rounded-full transition-colors"
+              >
+                <Linkedin className="w-4 h-4 text-blue-400" />
+              </a>
+              <a
+                href="https://github.com/vidhula-kripali"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 bg-blue-600/20 hover:bg-blue-600/30 rounded-full transition-colors"
+              >
+                <Github className="w-4 h-4 text-blue-400" />
+              </a>
+            </div>
+            
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-gray-600 text-gray-300 hover:bg-gray-800"
+              asChild
             >
-              <Mail className="w-5 h-5 text-blue-400" />
-            </a>
-            <a
-              href="https://linkedin.com/in/g-vidhula-kripali"
-              className="p-2 bg-blue-600/20 hover:bg-blue-600/30 rounded-full transition-colors"
+              <a href="mailto:gvidhulak@gmail.com">
+                Hire Me
+              </a>
+            </Button>
+            
+            <Button
+              variant="ghost"
+              size="sm"
+              className="md:hidden"
             >
-              <Linkedin className="w-5 h-5 text-blue-400" />
-            </a>
-            <a
-              href="tel:+4915510389433"
-              className="p-2 bg-blue-600/20 hover:bg-blue-600/30 rounded-full transition-colors"
-            >
-              <Phone className="w-5 h-5 text-blue-400" />
-            </a>
+              <Menu className="w-5 h-5" />
+            </Button>
           </div>
         </div>
       </div>
