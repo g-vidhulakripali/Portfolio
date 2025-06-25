@@ -13,21 +13,21 @@ export const AboutSection = () => {
     <section className="container mx-auto px-4 py-16">
       <div className="text-center mb-16">
         <div className="flex items-center justify-center mb-4">
-          <User className="w-8 h-8 text-blue-400 mr-3" />
+          <User className="w-8 h-8 text-purple-400 mr-3" />
           <h2 className="text-4xl font-bold text-white">About Me</h2>
         </div>
-        <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto"></div>
+        <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-blue-400 mx-auto"></div>
       </div>
       
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         <div className="space-y-6">
-          <p className="text-lg text-gray-300 leading-relaxed">
+          <p className="text-lg text-gray-200 leading-relaxed">
             I'm a passionate Full Stack Developer currently pursuing my Master's in Applied Computer Science 
             in Germany. With over 3 years of professional experience, I've worked with leading companies 
             like Cognizant, delivering solutions for major clients including Caterpillar and Optum.
           </p>
           
-          <p className="text-lg text-gray-300 leading-relaxed">
+          <p className="text-lg text-gray-200 leading-relaxed">
             My expertise spans across modern web technologies including Java, Spring Boot, Angular, React, 
             and Python. I'm passionate about creating scalable, user-friendly applications and continuously 
             learning new technologies to stay at the forefront of software development.
@@ -37,7 +37,7 @@ export const AboutSection = () => {
             {["Problem Solver", "Team Player", "Innovation Focused", "Quality Driven"].map((trait) => (
               <span
                 key={trait}
-                className="px-4 py-2 bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-400/30 rounded-full text-blue-300 text-sm hover:from-blue-600/30 hover:to-purple-600/30 transition-colors"
+                className="px-4 py-2 bg-gradient-to-r from-purple-600/30 to-blue-600/30 border border-purple-400/30 rounded-full text-purple-200 text-sm hover:from-purple-600/40 hover:to-blue-600/40 transition-colors"
               >
                 {trait}
               </span>
@@ -49,13 +49,13 @@ export const AboutSection = () => {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/15 transition-all duration-300 hover:scale-105 group"
+              className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/15 transition-all duration-300 hover:scale-105 group border border-white/10"
             >
-              <div className="bg-gradient-to-br from-blue-400 to-purple-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+              <div className="bg-gradient-to-br from-purple-400 to-blue-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <stat.icon className="w-8 h-8 text-white" />
               </div>
               <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
-              <div className="text-gray-400 text-sm">{stat.label}</div>
+              <div className="text-gray-300 text-sm">{stat.label}</div>
             </div>
           ))}
         </div>

@@ -29,11 +29,11 @@ export const EducationSection = () => {
     <section className="container mx-auto px-4 py-20">
       <div className="text-center mb-16">
         <div className="flex items-center justify-center mb-6">
-          <GraduationCap className="w-8 h-8 text-blue-600 mr-3" />
-          <h2 className="text-4xl font-bold text-gray-800">Education</h2>
+          <GraduationCap className="w-8 h-8 text-purple-400 mr-3" />
+          <h2 className="text-4xl font-bold text-white">Education</h2>
         </div>
-        <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-4"></div>
-        <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+        <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-blue-400 mx-auto mb-4"></div>
+        <p className="text-gray-200 max-w-2xl mx-auto text-lg">
           Academic foundation and continuous learning in computer science and engineering
         </p>
       </div>
@@ -42,15 +42,15 @@ export const EducationSection = () => {
         {education.map((edu, index) => (
           <Card 
             key={index} 
-            className={`bg-white/70 backdrop-blur-sm border-gray-200/50 hover:bg-white/90 transition-all duration-300 shadow-lg hover:shadow-xl ${
-              edu.isOngoing ? 'ring-2 ring-blue-400/40 border-blue-200' : 'border-gray-200'
+            className={`bg-white/10 backdrop-blur-sm border-white/10 hover:bg-white/15 transition-all duration-300 shadow-lg hover:shadow-xl ${
+              edu.isOngoing ? 'ring-2 ring-purple-400/40 border-purple-400/30' : 'border-white/10'
             }`}
           >
             <CardContent className="p-8">
               <div className="flex items-start">
                 <div className={`${
                   edu.isOngoing 
-                    ? 'bg-gradient-to-r from-blue-500 to-purple-500' 
+                    ? 'bg-gradient-to-r from-purple-500 to-blue-500' 
                     : 'bg-gradient-to-r from-gray-600 to-gray-700'
                 } w-16 h-16 rounded-xl flex items-center justify-center mr-6 flex-shrink-0 shadow-lg`}>
                   <GraduationCap className="w-8 h-8 text-white" />
@@ -59,33 +59,28 @@ export const EducationSection = () => {
                 <div className="flex-1">
                   <div className="flex flex-wrap items-start justify-between mb-4">
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-800 mb-2">{edu.degree}</h3>
-                      <p className="text-blue-600 font-semibold text-lg">{edu.institution}</p>
+                      <h3 className="text-2xl font-bold text-white mb-2">{edu.degree}</h3>
+                      <p className="text-purple-300 font-semibold text-lg">{edu.institution}</p>
                     </div>
                     <div className="text-right">
-                      {edu.isOngoing && (
-                        <div className="bg-gradient-to-r from-blue-500 to-purple-500 px-4 py-2 rounded-full text-white font-medium mb-2 shadow-md">
-                          In Progress
-                        </div>
-                      )}
-                      <span className="bg-purple-100 border border-purple-200 px-3 py-1 rounded-full text-purple-700 text-sm font-medium">
+                      <span className="bg-purple-500/20 border border-purple-400/30 px-3 py-1 rounded-full text-purple-200 text-sm font-medium">
                         {edu.type}
                       </span>
                     </div>
                   </div>
                   
                   <div className="grid md:grid-cols-3 gap-4 mb-6">
-                    <div className="flex items-center text-gray-600">
-                      <Calendar className="w-5 h-5 mr-2 text-blue-500" />
+                    <div className="flex items-center text-gray-300">
+                      <Calendar className="w-5 h-5 mr-2 text-purple-400" />
                       <span className="font-medium">{edu.period}</span>
                     </div>
-                    <div className="flex items-center text-gray-600">
-                      <MapPin className="w-5 h-5 mr-2 text-blue-500" />
+                    <div className="flex items-center text-gray-300">
+                      <MapPin className="w-5 h-5 mr-2 text-purple-400" />
                       <span className="font-medium">{edu.location}</span>
                     </div>
                     {edu.cgpa && (
-                      <div className="flex items-center text-gray-600">
-                        <Award className="w-5 h-5 mr-2 text-blue-500" />
+                      <div className="flex items-center text-gray-300">
+                        <Award className="w-5 h-5 mr-2 text-purple-400" />
                         <span className="font-medium">CGPA: {edu.cgpa}</span>
                       </div>
                     )}
@@ -93,18 +88,18 @@ export const EducationSection = () => {
                   
                   {edu.focus && (
                     <div className="mb-4">
-                      <h4 className="text-gray-800 font-semibold mb-2">Specialization:</h4>
-                      <p className="text-gray-600">{edu.focus}</p>
+                      <h4 className="text-white font-semibold mb-2">Specialization:</h4>
+                      <p className="text-gray-200">{edu.focus}</p>
                     </div>
                   )}
                   
                   {edu.achievements && (
                     <div>
-                      <h4 className="text-gray-800 font-semibold mb-3">Key Highlights:</h4>
+                      <h4 className="text-white font-semibold mb-3">Key Highlights:</h4>
                       <ul className="space-y-2">
                         {edu.achievements.map((achievement, idx) => (
-                          <li key={idx} className="text-gray-600 flex items-start">
-                            <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                          <li key={idx} className="text-gray-200 flex items-start">
+                            <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                             {achievement}
                           </li>
                         ))}

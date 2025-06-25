@@ -38,47 +38,32 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
-
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
-
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
-
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
-
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
-
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
@@ -97,25 +82,24 @@
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground;
   }
 }
 
-/* Enhanced 3D Moving Background Animations */
+/* Dynamic Background Animations */
 @keyframes float {
   0%, 100% {
     transform: translateY(0px) rotate(0deg) scale(1);
   }
   25% {
-    transform: translateY(-30px) rotate(90deg) scale(1.1);
+    transform: translateY(-40px) rotate(90deg) scale(1.1);
   }
   50% {
     transform: translateY(0px) rotate(180deg) scale(1);
   }
   75% {
-    transform: translateY(-15px) rotate(270deg) scale(0.9);
+    transform: translateY(-20px) rotate(270deg) scale(0.9);
   }
 }
 
@@ -124,16 +108,52 @@
     transform: translateX(0px) translateY(0px) rotate(0deg);
   }
   25% {
-    transform: translateX(30px) translateY(-20px) rotate(90deg);
+    transform: translateX(40px) translateY(-30px) rotate(90deg);
   }
   50% {
-    transform: translateX(-20px) translateY(-30px) rotate(180deg);
+    transform: translateX(-30px) translateY(-40px) rotate(180deg);
   }
   75% {
-    transform: translateX(-30px) translateY(15px) rotate(270deg);
+    transform: translateX(-40px) translateY(20px) rotate(270deg);
   }
   100% {
     transform: translateX(0px) translateY(0px) rotate(360deg);
+  }
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-30px) scale(1.05);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes wave-reverse {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }
 
@@ -172,11 +192,27 @@
 }
 
 .animate-float {
-  animation: float 8s ease-in-out infinite;
+  animation: float 12s ease-in-out infinite;
 }
 
 .animate-drift {
-  animation: drift 10s ease-in-out infinite;
+  animation: drift 15s ease-in-out infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 8s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-wave {
+  animation: wave 15s ease-in-out infinite;
+}
+
+.animate-wave-reverse {
+  animation: wave-reverse 18s ease-in-out infinite;
 }
 
 /* Scroll animation classes */
@@ -194,21 +230,21 @@
 
 /* Professional styling enhancements */
 .section-divider {
-  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.3), transparent);
   height: 1px;
   margin: 2rem 0;
 }
 
 .professional-card {
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
 
 .professional-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 40px rgba(139, 92, 246, 0.2);
 }
 
 /* Smooth section transitions */
@@ -228,5 +264,5 @@ section {
 
 .bg-animated {
   background-size: 200% 200%;
-  animation: backgroundShift 20s ease infinite;
+  animation: backgroundShift 25s ease infinite;
 }
