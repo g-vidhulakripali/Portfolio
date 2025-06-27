@@ -1,10 +1,10 @@
-# Polished Page Palette
+# Portfolio
 
 <!-- Project URL: https://lovable.dev/projects/123469f4-8257-4f69-b486-c8dacda0373c -->
 
 ## Project Info
 
-A modern, beautiful portfolio web application built with Vite, TypeScript, React, shadcn-ui, and Tailwind CSS.
+A modern, beautiful portfolio web application built with Vite, TypeScript, React, shadcn-ui, and Tailwind CSS. 
 
 ## Getting Started
 
