@@ -1,4 +1,3 @@
-
 import { ArrowDown, Github, Linkedin, Mail, Download, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -10,8 +9,12 @@ export const HeroSection = () => {
           <div className="w-48 h-48 mx-auto mb-8 relative group">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 rounded-full animate-pulse"></div>
             <div className="absolute inset-2 bg-slate-900 rounded-full flex items-center justify-center">
-              <div className="w-32 h-32 bg-gradient-to-br from-blue-200 to-purple-300 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <span className="text-4xl font-bold text-slate-800">VK</span>
+              <div className="w-32 h-32 bg-gradient-to-br from-blue-200 to-purple-300 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 overflow-hidden border-4 border-purple-300">
+                <img 
+                  src="https://i.imgur.com/tQXvShC.png" 
+                  alt="VK" 
+                  className="object-cover w-full h-full rounded-full"
+                />
               </div>
             </div>
           </div>
@@ -39,19 +42,22 @@ export const HeroSection = () => {
           <Button 
             size="lg" 
             className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            asChild
           >
-            <Github className="w-5 h-5 mr-2" />
-            View My Work
+            <a href="https://github.com/g-vidhulakripali" target="_blank" rel="noopener noreferrer">
+              <Github className="w-5 h-5 mr-2" />
+              View My Work
+            </a>
           </Button>
           
-          <Button 
+          {/* <Button 
             variant="outline" 
             size="lg"
             className="border-gray-600 text-gray-300 hover:bg-gray-800 hover:border-gray-500 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
           >
             <Download className="w-5 h-5 mr-2" />
             Download CV
-          </Button>
+          </Button> */}
         </div>
         
         <div className="flex justify-center space-x-6 animate-fade-in delay-1200">

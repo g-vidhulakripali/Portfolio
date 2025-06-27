@@ -1,4 +1,3 @@
-
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
 import { AboutSection } from "@/components/AboutSection";
@@ -7,6 +6,7 @@ import { ExperienceTimeline } from "@/components/ExperienceTimeline";
 import { SkillsShowcase } from "@/components/SkillsShowcase";
 import { ProjectsShowcase } from "@/components/ProjectsShowcase";
 import { ContactSection } from "@/components/ContactSection";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -112,6 +112,7 @@ const Index = () => {
           </div>
         </main>
       </div>
+      <Footer />
     </div>
   );
 };

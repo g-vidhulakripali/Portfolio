@@ -32,8 +32,8 @@ export const ProjectsShowcase = () => {
       description: "Built an advanced RAG system using LLaMA for intelligent knowledge retrieval and AI-driven responses. Implemented vector databases and semantic search capabilities.",
       icon: Brain,
       image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&h=400&fit=crop",
-      technologies: ["Python", "LLaMA", "Vector DB", "NLP", "Streamlit"],
-      github: "https://github.com/g-vidhulakripali/rag-system",
+      technologies: ["Python","Langchain", "LLaMA", "Vector DB", "LLM", "Angular", "Sqlite"],
+      github: "https://github.com/g-vidhulakripali/TaADs-Project",
       live: null,
       featured: true
     },
@@ -43,7 +43,7 @@ export const ProjectsShowcase = () => {
       icon: Shield,
       image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop",
       technologies: ["Network Security", "NS2", "Algorithm Design", "Research"],
-      github: "https://github.com/g-vidhulakripali/manet-security",
+      github: null,
       live: null,
       featured: true
     },
@@ -134,12 +134,12 @@ export const ProjectsShowcase = () => {
                   <Button
                     variant="outline"
                     size="sm"
-                    className="border-gray-600 text-gray-300 hover:bg-gray-800"
+                    className="border-gray-600 text-black hover:bg-gray-800 hover:text-white"
                     asChild
                   >
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
                       <Github className="w-4 h-4 mr-2" />
-                      Code
+                      View Project
                     </a>
                   </Button>
                 )}
@@ -162,7 +162,7 @@ export const ProjectsShowcase = () => {
       </div>
 
       {/* Other Projects */}
-      <div className="animate-on-scroll">
+      {/* <div className="animate-on-scroll">
         <h3 className="text-2xl font-bold text-gray-100 mb-8 text-center">Other Projects</h3>
         <div className="grid md:grid-cols-2 gap-6">
           {otherProjects.map((project, index) => (
@@ -201,15 +201,15 @@ export const ProjectsShowcase = () => {
             </Card>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* GitHub CTA */}
       <div className="text-center mt-16 animate-on-scroll">
         <Card className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 border-blue-400/30 max-w-2xl mx-auto">
           <CardContent className="p-8">
             <Github className="w-16 h-16 text-blue-400 mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-gray-100 mb-4">Explore More on GitHub</h3>
-            <p className="text-gray-200 mb-6">
+            <h3 className="text-2xl font-bold text-[rgb(15,68,173)] mb-4">Explore More on GitHub</h3>
+            <p className="text-[rgb(15,68,173)] mb-6">
               Check out my GitHub profile for more projects, contributions, and code samples
             </p>
             <Button 

@@ -36,7 +36,7 @@ export const ContactSection = () => {
       icon: Github,
       label: "Github",
       value: "G Vidhula Kripali",
-      href: "https://linkedin.com/in/g-vidhula-kripali",
+      href: "https://linkedin.com/in/g-vidhulakripali",
       color: "from-purple-600 to-violet-700"
     }
   ];
@@ -110,17 +110,17 @@ export const ContactSection = () => {
         <div>
           <Card className="bg-gradient-to-br from-blue-600/20 to-purple-600/20 border-blue-400/30 h-full">
             <CardContent className="p-8 flex flex-col justify-center text-center h-full">
-              <div className="mb-6">
-                <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="mb-2">
+                <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-2">
                   <Send className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Ready to Work Together?</h3>
-                <p className="text-gray-300 mb-6">
+                <h3 className="text-2xl font-bold text-[rgb(15,68,173)] mb-1">Ready to Work Together?</h3>
+                <p className="text-[rgb(15,68,173)] mb-4">
                   I'm always open to discussing new opportunities and interesting projects.
                 </p>
               </div>
               
-              <div className="space-y-4">
+              <div className="space-y-3">
                 <Button 
                   size="lg" 
                   className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
@@ -132,7 +132,7 @@ export const ContactSection = () => {
                   </a>
                 </Button>
                 
-                <div className="flex space-x-4 justify-center">
+                <div className="flex space-x-4 justify-center mt-2">
                   {socialLinks.map((social, index) => (
                     <a
                       key={index}
@@ -177,8 +177,8 @@ export const ContactSection = () => {
               
               <Button
                 variant="outline"
-                size="lg" 
-                className="border-gray-600 text-gray-300 hover:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                size="lg"
+                className="border-gray-600 text-black hover:text-white hover:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 asChild
               >
                 <a href="https://github.com/g-vidhulakripali" target="_blank" rel="noopener noreferrer">

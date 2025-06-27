@@ -1,4 +1,3 @@
-
 import { Github, Linkedin, Mail, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -14,16 +13,27 @@ export const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-gray-700/50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            VK
-          </div>
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="focus:outline-none flex items-center"
+            aria-label="Go to Home"
+          >
+            <img
+              src="https://i.imgur.com/tQXvShC.png"
+              alt="Home"
+              className="w-10 h-10 rounded-full border-2 border-purple-300 object-cover hover:scale-105 transition-transform duration-200 mr-2"
+            />
+            <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">VK</span>
+          </button>
+          
           
           <nav className="hidden md:flex space-x-8">
             {[
               { label: "About", id: "about" },
+              { label: "Education", id: "education" },
+              { label: "Experience", id: "experience" },
               { label: "Skills", id: "skills" },
               { label: "Projects", id: "projects" },
-              { label: "Experience", id: "experience" },
               { label: "Contact", id: "contact" }
             ].map((item) => (
               <button

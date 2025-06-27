@@ -78,8 +78,8 @@ export const SkillsShowcase = () => {
   ];
 
   const languages = [
-    { name: "English", level: 90, levelText: "C1", color: "from-emerald-500 to-teal-500" },
-    { name: "German", level: 40, levelText: "A2", color: "from-orange-500 to-red-500" },
+    { name: "English", level: 90, levelText: "Proficient-C1", color: "from-emerald-500 to-teal-500" },
+    { name: "German", level: 40, levelText: "Beginner-A2", color: "from-orange-500 to-red-500" },
     { name: "Tamil", level: 100, levelText: "Native", color: "from-violet-500 to-purple-500" },
   ];
 

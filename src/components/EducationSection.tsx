@@ -1,4 +1,3 @@
-
 import { GraduationCap, Calendar, MapPin, Award } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useEffect, useRef } from "react";
@@ -75,19 +74,22 @@ export const EducationSection = () => {
                 <div className={`${
                   edu.isOngoing 
                     ? 'bg-gradient-to-r from-purple-500 to-blue-500' 
-                    : 'bg-gradient-to-r from-gray-600 to-gray-700'
+                    : 'bg-gradient-to-r from-orange-600 to-orange-700'
                 } w-16 h-16 rounded-xl flex items-center justify-center mr-6 flex-shrink-0 shadow-lg`}>
                   <GraduationCap className="w-8 h-8 text-white" />
                 </div>
                 
                 <div className="flex-1">
-                  <div className="flex flex-wrap items-start justify-between mb-4">
-                    <div>
-                      <h3 className="text-2xl font-bold text-gray-800 mb-2">{edu.degree}</h3>
+                  <div className="flex flex-wrap items-start mb-4">
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-2xl font-bold text-gray-800 mb-2 break-words">{edu.degree}</h3>
                       <p className="text-purple-700 font-semibold text-lg">{edu.institution}</p>
                     </div>
-                    <div className="text-right">
-                      <span className="bg-purple-500/20 border border-purple-400/30 px-3 py-1 rounded-full text-purple-700 text-sm font-medium">
+                    <div className="flex items-start justify-end ml-4">
+                      <span className="bg-purple-500/20 border border-purple-400/30 px-3 py-1 rounded-full text-purple-700 text-sm font-medium whitespace-nowrap flex items-center">
+                        {edu.isOngoing && (
+                          <span className="w-2 h-2 bg-green-500 rounded-full mr-2 flex-shrink-0" title="Ongoing"></span>
+                        )}
                         {edu.type}
                       </span>
                     </div>
