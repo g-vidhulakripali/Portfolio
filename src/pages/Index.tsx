@@ -78,36 +78,36 @@ const Index = () => {
       <div className="relative z-10">
         <Header />
         
-        <main className="space-y-0">
+        <main className="space-y-16">
           <HeroSection />
           
-          {/* About Section - Semi-transparent dark */}
-          <div id="about" className="bg-gray-900/40 backdrop-blur-md scroll-fade-in">
+          {/* About Section - Dark background */}
+          <div id="about" className="bg-gray-900/60 backdrop-blur-md py-20">
             <AboutSection />
           </div>
           
-          {/* Education Section - Semi-transparent lighter */}
-          <div id="education" className="bg-white/10 backdrop-blur-md scroll-slide-right">
+          {/* Education Section - Light background */}
+          <div id="education" className="bg-white/15 backdrop-blur-md py-20">
             <EducationSection />
           </div>
           
-          {/* Experience Section - Semi-transparent dark */}
-          <div id="experience" className="bg-gray-900/40 backdrop-blur-md scroll-fade-in">
+          {/* Experience Section - Dark background */}
+          <div id="experience" className="bg-gray-900/60 backdrop-blur-md py-20">
             <ExperienceTimeline />
           </div>
           
-          {/* Skills Section - Semi-transparent lighter */}
-          <div id="skills" className="bg-white/10 backdrop-blur-md scroll-slide-left">
+          {/* Skills Section - Light background */}
+          <div id="skills" className="bg-white/15 backdrop-blur-md py-20">
             <SkillsShowcase />
           </div>
           
-          {/* Projects Section - Semi-transparent dark */}
-          <div id="projects" className="bg-gray-900/40 backdrop-blur-md scroll-fade-in">
+          {/* Projects Section - Dark background */}
+          <div id="projects" className="bg-gray-900/60 backdrop-blur-md py-20">
             <ProjectsShowcase />
           </div>
           
-          {/* Contact Section - Semi-transparent lighter */}
-          <div id="contact" className="bg-white/10 backdrop-blur-md scroll-slide-right">
+          {/* Contact Section - Light background */}
+          <div id="contact" className="bg-white/15 backdrop-blur-md py-20">
             <ContactSection />
           </div>
         </main>

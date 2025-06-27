@@ -228,6 +228,18 @@
   animation: slideInLeft 0.8s ease-out;
 }
 
+/* Smooth fade-in animation for individual elements */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.animate-fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Professional styling enhancements */
 .section-divider {
   background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.3), transparent);

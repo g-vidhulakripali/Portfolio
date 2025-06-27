@@ -1,8 +1,31 @@
 import { Folder, ExternalLink, Github, Code, Brain, Shield } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useEffect, useRef } from "react";
 
 export const ProjectsShowcase = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-in');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      const elements = sectionRef.current.querySelectorAll('.animate-on-scroll');
+      elements.forEach((el) => observer.observe(el));
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const projects = [
     {
       title: "Retrieval-Augmented Generation (RAG) System",
@@ -50,14 +73,14 @@ export const ProjectsShowcase = () => {
   const otherProjects = projects.filter(p => !p.featured);
 
   return (
-    <section className="container mx-auto px-4 py-16">
-      <div className="text-center mb-16">
+    <section ref={sectionRef} className="container mx-auto px-4">
+      <div className="text-center mb-16 animate-on-scroll">
         <div className="flex items-center justify-center mb-4">
-          <Folder className="w-8 h-8 text-blue-400 mr-3" />
-          <h2 className="text-4xl font-bold text-white">Featured Projects</h2>
+          <Folder className="w-8 h-8 text-blue-300 mr-3" />
+          <h2 className="text-4xl font-bold text-gray-100">Featured Projects</h2>
         </div>
         <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto mb-4"></div>
-        <p className="text-gray-400 max-w-2xl mx-auto">
+        <p className="text-gray-200 max-w-2xl mx-auto">
           Here are some of my recent projects that showcase my skills and passion for technology
         </p>
       </div>
@@ -65,7 +88,11 @@ export const ProjectsShowcase = () => {
       {/* Featured Projects */}
       <div className="grid lg:grid-cols-2 gap-8 mb-16">
         {featuredProjects.map((project, index) => (
-          <Card key={index} className="bg-white/10 backdrop-blur-sm border-gray-700/50 overflow-hidden group hover:bg-white/15 transition-all duration-300">
+          <Card 
+            key={index} 
+            className="bg-white/10 backdrop-blur-sm border-gray-700/50 overflow-hidden group hover:bg-white/15 transition-all duration-300 animate-on-scroll"
+            style={{ animationDelay: `${index * 0.2}s` }}
+          >
             <div className="relative overflow-hidden h-48">
               <img 
                 src={project.image} 
@@ -81,13 +108,13 @@ export const ProjectsShowcase = () => {
             </div>
             
             <CardHeader>
-              <CardTitle className="text-white group-hover:text-blue-300 transition-colors">
+              <CardTitle className="text-gray-100 group-hover:text-blue-300 transition-colors">
                 {project.title}
               </CardTitle>
             </CardHeader>
             
             <CardContent className="space-y-4">
-              <p className="text-gray-300 leading-relaxed">
+              <p className="text-gray-200 leading-relaxed">
                 {project.description}
               </p>
               
@@ -135,24 +162,28 @@ export const ProjectsShowcase = () => {
       </div>
 
       {/* Other Projects */}
-      <div>
-        <h3 className="text-2xl font-bold text-white mb-8 text-center">Other Projects</h3>
+      <div className="animate-on-scroll">
+        <h3 className="text-2xl font-bold text-gray-100 mb-8 text-center">Other Projects</h3>
         <div className="grid md:grid-cols-2 gap-6">
           {otherProjects.map((project, index) => (
-            <Card key={index} className="bg-white/10 backdrop-blur-sm border-gray-700/50 hover:bg-white/15 transition-all duration-300 group">
+            <Card 
+              key={index} 
+              className="bg-white/10 backdrop-blur-sm border-gray-700/50 hover:bg-white/15 transition-all duration-300 group animate-on-scroll"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
               <CardContent className="p-6">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center">
                     <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 w-10 h-10 rounded-lg flex items-center justify-center mr-3">
                       <project.icon className="w-5 h-5 text-blue-400" />
                     </div>
-                    <h4 className="text-lg font-semibold text-white group-hover:text-blue-300 transition-colors">
+                    <h4 className="text-lg font-semibold text-gray-100 group-hover:text-blue-300 transition-colors">
                       {project.title}
                     </h4>
                   </div>
                 </div>
                 
-                <p className="text-gray-300 mb-4 text-sm">
+                <p className="text-gray-200 mb-4 text-sm">
                   {project.description}
                 </p>
                 
@@ -173,12 +204,12 @@ export const ProjectsShowcase = () => {
       </div>
 
       {/* GitHub CTA */}
-      <div className="text-center mt-16">
+      <div className="text-center mt-16 animate-on-scroll">
         <Card className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 border-blue-400/30 max-w-2xl mx-auto">
           <CardContent className="p-8">
             <Github className="w-16 h-16 text-blue-400 mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-white mb-4">Explore More on GitHub</h3>
-            <p className="text-gray-300 mb-6">
+            <h3 className="text-2xl font-bold text-gray-100 mb-4">Explore More on GitHub</h3>
+            <p className="text-gray-200 mb-6">
               Check out my GitHub profile for more projects, contributions, and code samples
             </p>
             <Button 

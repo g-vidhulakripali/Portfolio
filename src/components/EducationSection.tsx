@@ -1,8 +1,31 @@
 
 import { GraduationCap, Calendar, MapPin, Award } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { useEffect, useRef } from "react";
 
 export const EducationSection = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-in');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      const elements = sectionRef.current.querySelectorAll('.animate-on-scroll');
+      elements.forEach((el) => observer.observe(el));
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const education = [
     {
       degree: "Master of Applied Computer Science",
@@ -26,14 +49,14 @@ export const EducationSection = () => {
   ];
 
   return (
-    <section className="container mx-auto px-4 py-20">
-      <div className="text-center mb-16">
+    <section ref={sectionRef} className="container mx-auto px-4">
+      <div className="text-center mb-16 animate-on-scroll">
         <div className="flex items-center justify-center mb-6">
-          <GraduationCap className="w-8 h-8 text-purple-400 mr-3" />
-          <h2 className="text-4xl font-bold text-white">Education</h2>
+          <GraduationCap className="w-8 h-8 text-purple-600 mr-3" />
+          <h2 className="text-4xl font-bold text-gray-800">Education</h2>
         </div>
         <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-blue-400 mx-auto mb-4"></div>
-        <p className="text-gray-200 max-w-2xl mx-auto text-lg">
+        <p className="text-gray-700 max-w-2xl mx-auto text-lg">
           Academic foundation and continuous learning in computer science and engineering
         </p>
       </div>
@@ -42,9 +65,10 @@ export const EducationSection = () => {
         {education.map((edu, index) => (
           <Card 
             key={index} 
-            className={`bg-white/10 backdrop-blur-sm border-white/10 hover:bg-white/15 transition-all duration-300 shadow-lg hover:shadow-xl ${
-              edu.isOngoing ? 'ring-2 ring-purple-400/40 border-purple-400/30' : 'border-white/10'
+            className={`bg-white/20 backdrop-blur-sm border-white/20 hover:bg-white/25 transition-all duration-300 shadow-lg hover:shadow-xl animate-on-scroll ${
+              edu.isOngoing ? 'ring-2 ring-purple-400/40 border-purple-400/30' : 'border-white/20'
             }`}
+            style={{ animationDelay: `${index * 0.2}s` }}
           >
             <CardContent className="p-8">
               <div className="flex items-start">
@@ -59,28 +83,28 @@ export const EducationSection = () => {
                 <div className="flex-1">
                   <div className="flex flex-wrap items-start justify-between mb-4">
                     <div>
-                      <h3 className="text-2xl font-bold text-white mb-2">{edu.degree}</h3>
-                      <p className="text-purple-300 font-semibold text-lg">{edu.institution}</p>
+                      <h3 className="text-2xl font-bold text-gray-800 mb-2">{edu.degree}</h3>
+                      <p className="text-purple-700 font-semibold text-lg">{edu.institution}</p>
                     </div>
                     <div className="text-right">
-                      <span className="bg-purple-500/20 border border-purple-400/30 px-3 py-1 rounded-full text-purple-200 text-sm font-medium">
+                      <span className="bg-purple-500/20 border border-purple-400/30 px-3 py-1 rounded-full text-purple-700 text-sm font-medium">
                         {edu.type}
                       </span>
                     </div>
                   </div>
                   
                   <div className="grid md:grid-cols-3 gap-4 mb-6">
-                    <div className="flex items-center text-gray-300">
-                      <Calendar className="w-5 h-5 mr-2 text-purple-400" />
+                    <div className="flex items-center text-gray-700">
+                      <Calendar className="w-5 h-5 mr-2 text-purple-600" />
                       <span className="font-medium">{edu.period}</span>
                     </div>
-                    <div className="flex items-center text-gray-300">
-                      <MapPin className="w-5 h-5 mr-2 text-purple-400" />
+                    <div className="flex items-center text-gray-700">
+                      <MapPin className="w-5 h-5 mr-2 text-purple-600" />
                       <span className="font-medium">{edu.location}</span>
                     </div>
                     {edu.cgpa && (
-                      <div className="flex items-center text-gray-300">
-                        <Award className="w-5 h-5 mr-2 text-purple-400" />
+                      <div className="flex items-center text-gray-700">
+                        <Award className="w-5 h-5 mr-2 text-purple-600" />
                         <span className="font-medium">CGPA: {edu.cgpa}</span>
                       </div>
                     )}
@@ -88,18 +112,18 @@ export const EducationSection = () => {
                   
                   {edu.focus && (
                     <div className="mb-4">
-                      <h4 className="text-white font-semibold mb-2">Specialization:</h4>
-                      <p className="text-gray-200">{edu.focus}</p>
+                      <h4 className="text-gray-800 font-semibold mb-2">Specialization:</h4>
+                      <p className="text-gray-700">{edu.focus}</p>
                     </div>
                   )}
                   
                   {edu.achievements && (
                     <div>
-                      <h4 className="text-white font-semibold mb-3">Key Highlights:</h4>
+                      <h4 className="text-gray-800 font-semibold mb-3">Key Highlights:</h4>
                       <ul className="space-y-2">
                         {edu.achievements.map((achievement, idx) => (
-                          <li key={idx} className="text-gray-200 flex items-start">
-                            <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                          <li key={idx} className="text-gray-700 flex items-start">
+                            <div className="w-2 h-2 bg-purple-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                             {achievement}
                           </li>
                         ))}
