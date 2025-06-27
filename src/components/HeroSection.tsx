@@ -70,7 +70,7 @@ export const HeroSection = () => {
             <Linkedin className="w-6 h-6 text-blue-400 group-hover:text-blue-300" />
           </a>
           <a
-            href="https://github.com/vidhula-kripali" 
+            href="https://github.com/g-vidhulakripali" 
             target="_blank"
             rel="noopener noreferrer"
             className="p-4 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-300 hover:scale-110 group backdrop-blur-sm"

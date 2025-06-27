@@ -1,17 +1,16 @@
-
 import { Mail, Phone, MapPin, Github, Linkedin, Send, MessageCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 export const ContactSection = () => {
   const contactInfo = [
-    {
-      icon: Phone,
-      label: "Phone",
-      value: "+49 15510 389433",
-      href: "tel:+4915510389433",
-      color: "from-green-500 to-emerald-500"
-    },
+    // {
+    //   icon: Phone,
+    //   label: "Phone",
+    //   value: "+49 15510 389433",
+    //   href: "tel:+4915510389433",
+    //   color: "from-green-500 to-emerald-500"
+    // },
     {
       icon: Mail,
       label: "Email",
@@ -24,7 +23,7 @@ export const ContactSection = () => {
       label: "Location",
       value: "Schmalkalden, Germany",
       href: null,
-      color: "from-purple-500 to-violet-500"
+      color: "from-orange-400 to-orange-600"
     },
     {
       icon: Linkedin,
@@ -32,6 +31,13 @@ export const ContactSection = () => {
       value: "G Vidhula Kripali",
       href: "https://linkedin.com/in/g-vidhula-kripali",
       color: "from-blue-600 to-blue-700"
+    },
+    {
+      icon: Github,
+      label: "Github",
+      value: "G Vidhula Kripali",
+      href: "https://linkedin.com/in/g-vidhula-kripali",
+      color: "from-purple-600 to-violet-700"
     }
   ];
 
@@ -39,7 +45,7 @@ export const ContactSection = () => {
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com/vidhula-kripali",
+      href: "https://github.com/g-vidhulakripali",
       color: "hover:bg-gray-700"
     },
     {
@@ -175,7 +181,7 @@ export const ContactSection = () => {
                 className="border-gray-600 text-gray-300 hover:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 asChild
               >
-                <a href="https://github.com/vidhula-kripali" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/g-vidhulakripali" target="_blank" rel="noopener noreferrer">
                   <Github className="w-5 h-5 mr-2" />
                   View GitHub
                 </a>

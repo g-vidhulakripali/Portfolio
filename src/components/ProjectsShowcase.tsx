@@ -33,7 +33,7 @@ export const ProjectsShowcase = () => {
       icon: Brain,
       image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&h=400&fit=crop",
       technologies: ["Python", "LLaMA", "Vector DB", "NLP", "Streamlit"],
-      github: "https://github.com/vidhula-kripali/rag-system",
+      github: "https://github.com/g-vidhulakripali/rag-system",
       live: null,
       featured: true
     },
@@ -43,7 +43,7 @@ export const ProjectsShowcase = () => {
       icon: Shield,
       image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop",
       technologies: ["Network Security", "NS2", "Algorithm Design", "Research"],
-      github: "https://github.com/vidhula-kripali/manet-security",
+      github: "https://github.com/g-vidhulakripali/manet-security",
       live: null,
       featured: true
     },
@@ -217,7 +217,7 @@ export const ProjectsShowcase = () => {
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
               asChild
             >
-              <a href="https://github.com/vidhula-kripali" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/g-vidhulakripali" target="_blank" rel="noopener noreferrer">
                 <Github className="w-5 h-5 mr-2" />
                 Visit GitHub Profile
               </a>

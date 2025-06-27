@@ -53,7 +53,7 @@ export const Header = () => {
                 <Linkedin className="w-4 h-4 text-blue-400" />
               </a>
               <a
-                href="https://github.com/vidhula-kripali"
+                href="https://github.com/g-vidhulakripali"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-blue-600/20 hover:bg-blue-600/30 rounded-full transition-colors"
@@ -62,7 +62,7 @@ export const Header = () => {
               </a>
             </div>
             
-            <Button
+            {/* <Button
               variant="outline"
               size="sm"
               className="border-gray-600 text-gray-300 hover:bg-gray-800"
@@ -71,7 +71,7 @@ export const Header = () => {
               <a href="mailto:gvidhulak@gmail.com">
                 Hire Me
               </a>
-            </Button>
+            </Button> */}
             
             <Button
               variant="ghost"
