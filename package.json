@@ -1,6 +1,7 @@
 {
   "name": "vidhula-portfolio",
   "version": "1.0.0",
+  "author": "G Vidhula Kripali",
   "private": false,
   "description": "A portfolio website showcasing my projects and skills.",
   "type": "module",
