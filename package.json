@@ -1,7 +1,8 @@
 {
-  "name": "vite_react_shadcn_ts",
-  "private": true,
-  "version": "0.0.0",
+  "name": "vidhula-portfolio",
+  "version": "1.0.0",
+  "private": false,
+  "description": "A portfolio website showcasing my projects and skills.",
   "type": "module",
   "scripts": {
     "start": "vite",
