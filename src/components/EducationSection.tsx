@@ -79,23 +79,39 @@ export const EducationSection = () => {
                   <GraduationCap className="w-8 h-8 text-white" />
                 </div>
                 
-                <div className="flex-1">
-                  <div className="flex flex-wrap items-start mb-4">
-                    <div className="flex-1 min-w-0">
-                      <h3 className="text-2xl font-bold text-gray-800 mb-2 break-words">{edu.degree}</h3>
-                      <p className="text-purple-700 font-semibold text-lg">{edu.institution}</p>
-                    </div>
-                    <div className="flex items-start justify-end ml-4">
-                      <span className="bg-purple-500/20 border border-purple-400/30 px-3 py-1 rounded-full text-purple-700 text-sm font-medium whitespace-nowrap flex items-center">
+                <div className="flex-1 min-w-0">
+                  {/* Fixed responsive header section */}
+                  <div className="mb-4">
+                    {/* Type badge - positioned at top right on mobile, inline on larger screens */}
+                    <div className="flex justify-end mb-2 sm:hidden">
+                      <span className="bg-purple-500/20 border border-purple-400/30 px-3 py-1 rounded-full text-purple-700 text-sm font-medium flex items-center">
                         {edu.isOngoing && (
                           <span className="w-2 h-2 bg-green-500 rounded-full mr-2 flex-shrink-0" title="Ongoing"></span>
                         )}
                         {edu.type}
                       </span>
                     </div>
+                    
+                    {/* Degree and institution */}
+                    <div className="sm:flex sm:items-start sm:justify-between">
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-2xl font-bold text-gray-800 mb-2">{edu.degree}</h3>
+                        <p className="text-purple-700 font-semibold text-lg">{edu.institution}</p>
+                      </div>
+                      
+                      {/* Type badge - hidden on mobile, shown on larger screens */}
+                      <div className="hidden sm:flex sm:items-start sm:ml-4">
+                        <span className="bg-purple-500/20 border border-purple-400/30 px-3 py-1 rounded-full text-purple-700 text-sm font-medium whitespace-nowrap flex items-center">
+                          {edu.isOngoing && (
+                            <span className="w-2 h-2 bg-green-500 rounded-full mr-2 flex-shrink-0" title="Ongoing"></span>
+                          )}
+                          {edu.type}
+                        </span>
+                      </div>
+                    </div>
                   </div>
                   
-                  <div className="grid md:grid-cols-3 gap-4 mb-6">
+                  <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
                     <div className="flex items-center text-gray-700">
                       <Calendar className="w-5 h-5 mr-2 text-purple-600" />
                       <span className="font-medium">{edu.period}</span>
