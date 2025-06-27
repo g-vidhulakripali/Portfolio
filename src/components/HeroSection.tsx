@@ -18,7 +18,7 @@ export const HeroSection = () => {
         </div>
         
         <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-fade-in">
-          VIDHULA KRIPALI
+          Vidhula Kripali Ganesh Babu
         </h1>
         
         <h2 className="text-2xl md:text-3xl text-gray-300 mb-4 animate-fade-in delay-300">
